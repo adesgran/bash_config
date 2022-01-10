@@ -8,7 +8,12 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
+
+# Configs
+export CURR_USR=adesgran
+export USR_DIR=/home/$CURR_USR
+
+#don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
@@ -105,10 +110,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-BASH_D="~/.bash_d"
-for f int $BASH_D
+BASH_D="$USR_DIR/.bash_d/.bash*"
+for f in $BASH_D
 do
-	. ~/.bash_d/$f
+	. $f
 	echo Load $f
 done
 
