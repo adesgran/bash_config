@@ -97,3 +97,16 @@ uploadbash ()
 	cd;
 	clear;
 }
+
+updateall ()
+{
+	updatebash;
+	updatevim;
+	bash;
+}
+
+uploadall ()
+{
+	uploadbash;
+	uploadvim;
+}
