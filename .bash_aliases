@@ -1,7 +1,16 @@
 alias baliases="vim ~/.bash_aliases"
 alias brc="vim ~/.bashrc"
 
+alias vrc="vim ~/.vimrc"
+
 alias gpush="git push origin main"
+
+add-repo ()
+{
+	git clone https://github.com/adesgran/$1 temp ;
+	mv temp/* . ;
+	rm -rf temp ;
+}
 
 gcom ()
 {
@@ -27,4 +36,60 @@ workspace ()
 	cd ~/goinfre;
 	github $1;
 	cd $1;
+}
+
+updatevim ()
+{
+	workspace vimrc;
+	cp .vimrc ~/.vimrc;
+	cd ..;
+	rm -rf vimrc;
+	workspace vim_plugins;
+	cp *.vim ~/.vim/plugin;
+	cd ..;
+	rm -rf vim_plugins;
+	cd;
+}
+
+uploadvim ()
+{
+	workspace vimrc;
+	cp ~/.vimrc .vimrc;
+	git add .vimrc;
+	git commit -m "Update Vimrc";
+	git push origin main;
+	cd ..;
+	rm -rf vimrc;
+	workspace vim_plugins;
+	cp ~/.vim/plugin/*.vim .;
+	git add *.vim;
+	git commit -m "Update Vim Plugins";
+	git push origin main;
+	cd ..;
+	rm -rf vim_plugins;
+	cd;
+}
+
+updatebash ()
+{
+	workspace bash_config;
+	cp .bash_aliases ~/.bash_aliases;
+	cp -rf .bash_d ~/.bash_d;
+	cd ..;
+	rm -rf bash_config;
+	cd;
+}
+
+uploadbash ()
+{
+	workspace bash_config;
+	cp ~/.bash_aliases .bash_aliases;
+	cp -rf ~/.bash_d .bash_d;
+	git add .bash_aliases;
+	git add .bash_d/.bash*;
+	git commit -m "Update Bash";
+	git push origin main;
+	cd ..;
+	rm -rf bash_config;
+	cd;
 }
