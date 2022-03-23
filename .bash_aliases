@@ -49,6 +49,7 @@ updatevim ()
 	cd ..;
 	rm -rf vim_plugins;
 	cd;
+	clear;
 }
 
 uploadvim ()
@@ -68,6 +69,7 @@ uploadvim ()
 	cd ..;
 	rm -rf vim_plugins;
 	cd;
+	clear;
 }
 
 updatebash ()
@@ -78,6 +80,7 @@ updatebash ()
 	cd ..;
 	rm -rf bash_config;
 	cd;
+	clear;
 }
 
 uploadbash ()
@@ -92,4 +95,5 @@ uploadbash ()
 	cd ..;
 	rm -rf bash_config;
 	cd;
+	clear;
 }
