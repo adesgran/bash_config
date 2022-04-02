@@ -89,7 +89,7 @@ uploadbash ()
 	workspace bash_config;
 	cp ~/.bash_aliases .bash_aliases;
 	cp ~/.mybash .mybash;
-	cp -rf ~/.bash_d .bash_d;
+	cp -rf ~/.bash_d .;
 	git add .bash_aliases;
 	git add .mybash;
 	git add .bash_d/.bash*;
