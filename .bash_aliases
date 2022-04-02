@@ -76,6 +76,7 @@ updatebash ()
 {
 	workspace bash_config;
 	cp .bash_aliases ~/.bash_aliases;
+	cp .mybash ~/.mybash;
 	cp -rf .bash_d ~/.bash_d;
 	cd ..;
 	rm -rf bash_config;
@@ -87,8 +88,10 @@ uploadbash ()
 {
 	workspace bash_config;
 	cp ~/.bash_aliases .bash_aliases;
+	cp ~/.mybash .mybash;
 	cp -rf ~/.bash_d .bash_d;
 	git add .bash_aliases;
+	git add .mybash;
 	git add .bash_d/.bash*;
 	git commit -m "Update Bash";
 	git push origin main;
