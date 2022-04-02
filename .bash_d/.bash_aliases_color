@@ -46,3 +46,5 @@ unset color_prompt force_color_prompt
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+#end
